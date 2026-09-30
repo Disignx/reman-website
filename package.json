@@ -1,0 +1,28 @@
+{
+  "name": "reman",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "rm -f .next/dev/lock && next dev --hostname 0.0.0.0 --port ${PORT:-3003}",
+    "build": "next build",
+    "typecheck": "tsc --noEmit",
+    "start": "next start --hostname 0.0.0.0 --port ${PORT:-3003}",
+    "assets:info": "node scripts/image-info.mjs",
+    "assets:check": "node scripts/check-image-assets.mjs",
+    "assets:sync-dims": "node scripts/sync-asset-dimensions.mjs"
+  },
+  "dependencies": {
+    "@fontsource/ubuntu-sans": "^5.2.5",
+    "@phosphor-icons/react": "^2.1.10",
+    "next": "16.2.12",
+    "react": "19.2.4",
+    "react-dom": "19.2.4",
+    "sharp": "^0.34.2"
+  },
+  "devDependencies": {
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "typescript": "^5"
+  }
+}

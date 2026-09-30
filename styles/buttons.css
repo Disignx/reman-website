@@ -1,0 +1,80 @@
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-sm);
+  padding: var(--space-md) var(--space-xl);
+  border: 0;
+  border-radius: var(--radius-sm);
+  font-family: var(--font-body);
+  font-size: var(--fs-body);
+  font-weight: var(--fw-semibold);
+  line-height: 1.2;
+  text-decoration: none;
+  cursor: pointer;
+  transition:
+    background-color var(--transition-base),
+    color var(--transition-base),
+    border-color var(--transition-base),
+    filter var(--transition-base);
+}
+
+.btn--primary {
+  background: var(--color-secondary);
+  color: var(--color-text-inverse);
+}
+
+.btn--primary:hover,
+.btn--primary:focus-visible {
+  filter: brightness(0.95);
+}
+
+.btn--ghost {
+  background: transparent;
+  color: var(--color-text-inverse);
+  border: 2px solid var(--color-secondary);
+}
+
+.btn--ghost:hover,
+.btn--ghost:focus-visible {
+  background: rgb(var(--color-secondary-rgb) / 0.15);
+}
+
+.btn--ghost-dark {
+  background: transparent;
+  color: var(--color-text);
+  border: 2px solid var(--color-secondary);
+}
+
+.btn--ghost-dark:hover,
+.btn--ghost-dark:focus-visible {
+  background: rgb(var(--color-secondary-rgb) / 0.08);
+  color: var(--color-primary);
+}
+
+.btn--lg {
+  min-height: 3.75rem;
+  padding: var(--space-md) var(--space-2xl);
+  font-size: var(--fs-body);
+}
+
+.btn--xl {
+  min-height: 5rem;
+  padding: var(--space-lg) var(--space-2xl);
+  font-size: var(--fs-body);
+}
+
+.btn--block {
+  width: 100%;
+  justify-content: space-between;
+}
+
+.btn--xl .icon {
+  width: 1.75rem;
+  height: 1.75rem;
+}
+
+.btn:focus-visible {
+  outline: 2px solid var(--color-secondary);
+  outline-offset: 2px;
+}

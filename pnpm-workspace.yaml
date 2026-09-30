@@ -1,0 +1,5 @@
+allowBuilds:
+  sharp: true
+
+# pnpm 11 führt vor jedem Skript erneut install aus und bricht ab, solange ein Build ignoriert wird.
+verifyDepsBeforeRun: false

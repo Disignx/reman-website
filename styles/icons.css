@@ -1,0 +1,36 @@
+.icon {
+  display: block;
+  flex-shrink: 0;
+  width: var(--icon-size-sm);
+  height: var(--icon-size-sm);
+}
+
+.icon--lg {
+  width: var(--icon-size-lg);
+  height: var(--icon-size-lg);
+}
+
+.icon--fact {
+  width: var(--icon-size-fact);
+  height: var(--icon-size-fact);
+}
+
+.icon--primary {
+  color: var(--color-primary);
+}
+
+.icon--secondary {
+  color: var(--color-secondary);
+}
+
+.icon--text {
+  color: var(--color-text);
+}
+
+.icon--inverse {
+  color: var(--color-text-inverse);
+}
+
+.icon--muted {
+  color: var(--color-text-muted);
+}

@@ -1,0 +1,54 @@
+.theme-switcher {
+  position: fixed;
+  right: var(--space-lg);
+  bottom: var(--space-lg);
+  z-index: var(--z-theme);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.theme-switcher__swatch {
+  width: 3rem;
+  height: 3rem;
+  padding: 0;
+  border: 2px solid var(--color-text-inverse);
+  border-radius: 50%;
+  box-shadow: 0 0.25rem 0.75rem rgb(0 0 0 / 0.28);
+  cursor: pointer;
+  background-color: var(--color-primary);
+  background-size: cover;
+  background-position: center;
+}
+
+.theme-switcher__swatch[aria-pressed="true"] {
+  box-shadow:
+    0 0 0 3px var(--color-bg),
+    0 0 0 5px var(--color-text),
+    0 0.25rem 0.75rem rgb(0 0 0 / 0.28);
+}
+
+.theme-switcher__swatch:focus-visible {
+  outline: 2px solid var(--color-secondary);
+  outline-offset: 4px;
+}
+
+.theme-asset {
+  display: none;
+}
+
+html[data-theme="green"] .theme-asset--green,
+html[data-theme="orange"] .theme-asset--orange,
+html[data-theme="purple"] .theme-asset--purple,
+html[data-theme="purple-dark"] .theme-asset--purple-dark {
+  display: block;
+}
+
+html[data-theme="purple"] .materials .icon--secondary,
+html[data-theme="purple"] .origin .icon--secondary,
+html[data-theme="purple"] .tech .icon--secondary,
+html[data-theme="purple-dark"] .materials .icon--secondary,
+html[data-theme="purple-dark"] .origin .icon--secondary,
+html[data-theme="purple-dark"] .tech .icon--secondary {
+  color: var(--color-accent-line);
+}

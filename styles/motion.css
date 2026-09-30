@@ -1,0 +1,163 @@
+/* Motion — Page Enter + Scroll Reveal (IO + CSS, no library)
+   Hero/LCP-Bilder werden nie versteckt. */
+
+:root {
+  --motion-duration: 0.55s;
+  --motion-hero-duration: 1s;
+  --motion-easing: cubic-bezier(0.22, 1, 0.36, 1);
+  --motion-distance: 16px;
+  --motion-stagger: 90ms;
+  --motion-hero-scale: 1.03;
+}
+
+body.dx-page-enter:not(.dx-page-ready) .site-header {
+  opacity: 0;
+  transform: translateY(calc(var(--motion-distance) * -0.75));
+}
+
+body.dx-page-enter:not(.dx-page-ready) #content {
+  transform: translateY(var(--motion-distance));
+}
+
+body.dx-page-enter:not(.dx-page-ready) .dx-enter-fade,
+body.dx-page-enter:not(.dx-page-ready) .dx-enter-up {
+  opacity: 0;
+}
+
+body.dx-page-enter:not(.dx-page-ready) .dx-enter-up {
+  transform: translateY(var(--motion-distance));
+}
+
+body.dx-page-ready .site-header {
+  opacity: 1;
+  transform: none;
+  transition:
+    opacity var(--motion-duration) var(--motion-easing),
+    transform var(--motion-duration) var(--motion-easing);
+}
+
+body.dx-page-ready #content {
+  transform: none;
+  transition: transform var(--motion-duration) var(--motion-easing);
+}
+
+body.dx-page-ready .dx-enter-fade,
+body.dx-page-ready .dx-enter-up {
+  opacity: 1;
+  transform: none;
+  transition:
+    opacity var(--motion-duration) var(--motion-easing),
+    transform var(--motion-duration) var(--motion-easing);
+}
+
+body.dx-page-ready .dx-enter-delay-1 {
+  transition-delay: 0.1s;
+}
+
+body.dx-page-ready .dx-enter-delay-2 {
+  transition-delay: 0.2s;
+}
+
+body.dx-page-ready .dx-enter-delay-3 {
+  transition-delay: 0.3s;
+}
+
+body.dx-page-ready .dx-enter-delay-4 {
+  transition-delay: 0.4s;
+}
+
+body.dx-page-ready .dx-enter-delay-5 {
+  transition-delay: 0.5s;
+}
+
+body.dx-page-enter:not(.dx-page-ready) .hero__media {
+  transform: scale(var(--motion-hero-scale));
+}
+
+body.dx-page-ready .hero__media {
+  transform: scale(1);
+  transition: transform var(--motion-hero-duration) var(--motion-easing);
+}
+
+.sr-fade {
+  opacity: 0;
+}
+
+.sr-fade-up {
+  opacity: 0;
+  transform: translateY(var(--motion-distance));
+}
+
+.sr-fade.sr-visible,
+.sr-fade-up.sr-visible {
+  opacity: 1;
+  transform: none;
+  transition:
+    opacity var(--motion-duration) var(--motion-easing),
+    transform var(--motion-duration) var(--motion-easing);
+}
+
+.sr-stagger > :is(.sr-fade, .sr-fade-up) {
+  opacity: 0;
+  transform: translateY(var(--motion-distance));
+}
+
+.sr-stagger > .sr-fade {
+  transform: none;
+}
+
+.sr-stagger.sr-visible > :is(.sr-fade, .sr-fade-up) {
+  opacity: 1;
+  transform: none;
+  transition:
+    opacity var(--motion-duration) var(--motion-easing),
+    transform var(--motion-duration) var(--motion-easing);
+}
+
+.sr-stagger.sr-visible > :is(.sr-fade, .sr-fade-up):nth-child(1) {
+  transition-delay: calc(var(--motion-stagger) * 0);
+}
+
+.sr-stagger.sr-visible > :is(.sr-fade, .sr-fade-up):nth-child(2) {
+  transition-delay: calc(var(--motion-stagger) * 1);
+}
+
+.sr-stagger.sr-visible > :is(.sr-fade, .sr-fade-up):nth-child(3) {
+  transition-delay: calc(var(--motion-stagger) * 2);
+}
+
+.sr-stagger.sr-visible > :is(.sr-fade, .sr-fade-up):nth-child(4) {
+  transition-delay: calc(var(--motion-stagger) * 3);
+}
+
+.sr-stagger.sr-visible > :is(.sr-fade, .sr-fade-up):nth-child(5) {
+  transition-delay: calc(var(--motion-stagger) * 4);
+}
+
+.sr-stagger.sr-visible > :is(.sr-fade, .sr-fade-up):nth-child(6) {
+  transition-delay: calc(var(--motion-stagger) * 5);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body.dx-page-enter:not(.dx-page-ready) .site-header,
+  body.dx-page-enter:not(.dx-page-ready) .dx-enter-fade,
+  body.dx-page-enter:not(.dx-page-ready) .dx-enter-up,
+  body.dx-page-enter:not(.dx-page-ready) .hero__media,
+  .sr-fade,
+  .sr-fade-up,
+  .sr-stagger > :is(.sr-fade, .sr-fade-up) {
+    opacity: 1;
+    transform: none;
+  }
+
+  body.dx-page-ready .site-header,
+  body.dx-page-ready #content,
+  body.dx-page-ready .dx-enter-fade,
+  body.dx-page-ready .dx-enter-up,
+  body.dx-page-ready .hero__media,
+  .sr-fade.sr-visible,
+  .sr-fade-up.sr-visible,
+  .sr-stagger.sr-visible > :is(.sr-fade, .sr-fade-up) {
+    transition: none;
+  }
+}
