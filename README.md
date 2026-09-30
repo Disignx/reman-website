@@ -26,23 +26,14 @@ cd ~/projects/re-man
 pnpm build
 ```
 
-## Plesk (dev.re-man.at) — Node, kein Docker
-
-Wie Commerce: GitHub → Plesk Git-Pull. Anders als Commerce: kein Compose, Host-Node startet Next.
-
-1. Domain **dev.re-man.at** → Git → Branch **main** → **Jetzt pullen**
-2. Zusätzliche Bereitstellungsaktionen (einmalig eintragen):
+Das erzeugt statische Dateien in `out/` (`output: "export"`). Lokal vorschauen:
 
 ```bash
-chmod +x scripts/plesk-deploy.sh
-scripts/plesk-deploy.sh
+pnpm preview
 ```
 
-3. Node.js aktivieren:
-   - Application Root: Document Root der Subdomain
-   - Startup File: `server.js`
-   - Application Mode: `production`
-   - Env: `NEXT_PUBLIC_SITE_URL=https://dev.re-man.at`
-   - Plesks eigenes npm-install aus
+## Deploy
 
-`PORT` setzt Plesk. Nach dem Pull Node-App neu starten.
+Verbindlicher Standard für DISIGNX-Websites (statisch, kein Node):
+
+→ [docs/DEPLOY-WEBSITES.md](docs/DEPLOY-WEBSITES.md)

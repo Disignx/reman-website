@@ -6,7 +6,8 @@
     "dev": "rm -f .next/dev/lock && next dev --hostname 0.0.0.0 --port ${PORT:-3003}",
     "build": "next build",
     "typecheck": "tsc --noEmit",
-    "start": "next start --hostname 0.0.0.0 --port ${PORT:-3003}",
+    "preview": "npx --yes serve@14 out --listen ${PORT:-3003}",
+    "start": "npx --yes serve@14 out --listen ${PORT:-3003}",
     "assets:info": "node scripts/image-info.mjs",
     "assets:check": "node scripts/check-image-assets.mjs",
     "assets:sync-dims": "node scripts/sync-asset-dimensions.mjs"

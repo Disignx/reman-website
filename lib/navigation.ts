@@ -78,9 +78,9 @@ export const FOOTER_COLUMNS: { title: string; links: NavLink[] }[] = [
 ];
 
 export const LEGAL_LINKS: NavLink[] = [
-  { href: "/datenschutz", label: "Datenschutz" },
-  { href: "/impressum", label: "Impressum" },
-  { href: "/agb", label: "AGB" },
+  { href: "/datenschutz/", label: "Datenschutz" },
+  { href: "/impressum/", label: "Impressum" },
+  { href: "/agb/", label: "AGB" },
 ];
 
 /** Routes not yet built as dedicated pages (footer/legal stubs planned). */

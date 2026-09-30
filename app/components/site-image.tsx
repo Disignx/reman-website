@@ -14,8 +14,8 @@ function isSvgAsset(asset: SiteImageAsset): boolean {
 }
 
 /**
- * Raster delivery via `next/image` (WebP/AVIF, responsive widths, lazy by default).
- * SVG brand assets render unoptimized — see IMAGES.md.
+ * Raster delivery via `next/image`. Static export serves originals (`unoptimized`).
+ * SVG brand assets are always unoptimized.
  */
 export function SiteImage({ asset, fill = false, priority, sizes, className }: SiteImageProps) {
   const isPriority = priority ?? asset.priority ?? false;

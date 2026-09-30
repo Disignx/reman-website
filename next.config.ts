@@ -1,11 +1,14 @@
 import type { NextConfig } from "next";
 
 /**
- * Self-hosted Next: `next build` + `next start` (Plesk Node, no Docker).
- * No `output: "export"`, no standalone image.
+ * Static export: GitHub Actions builds `out/`, Plesk serves files only.
+ * No Node process, no Docker. `next/image` ships originals (`unoptimized`).
  */
 const nextConfig: NextConfig = {
+  output: "export",
+  trailingSlash: true,
   images: {
+    unoptimized: true,
     qualities: [75, 85],
   },
 };
