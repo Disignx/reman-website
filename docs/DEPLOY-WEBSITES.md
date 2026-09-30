@@ -83,9 +83,14 @@ pnpm preview
 2. Nach `main` pushen
 3. Actions: Job **Deploy static** muss grün sein
 4. Plesk → Domain → Git → Branch **`deploy`** → **Jetzt pullen**
-5. Im Browser die Domain prüfen, inkl. Unterseiten (`/agb/`, Impressum, Datenschutz)
+5. Document Root auf `755` setzen (Plesk legt oft `750` + Gruppe `psacln` — Apache kann dann `.htaccess` nicht lesen → 403)
+6. Im Browser die Domain prüfen, inkl. Unterseiten (`/agb/`, Impressum, Datenschutz)
 
-Zusätzliche Bereitstellungsaktionen in Plesk bleiben **leer**.
+Einzige erlaubte zusätzliche Bereitstellungsaktion:
+
+```bash
+chmod 755 /var/www/vhosts/<subscription>/<document-root>
+```
 
 ---
 
@@ -153,6 +158,7 @@ rm -f /var/www/vhosts/system/dev.re-man.at/conf/vhost.conf
 rm -f /var/www/vhosts/system/dev.re-man.at/conf/vhost_ssl.conf
 plesk sbin httpdmng --reconfigure-domain dev.re-man.at
 plesk ext nodejs --disable -domain dev.re-man.at 2>/dev/null || true
+chmod 755 /var/www/vhosts/re-man.at/dev.re-man.at
 ```
 
 ---
@@ -174,6 +180,7 @@ plesk ext nodejs --disable -domain dev.re-man.at 2>/dev/null || true
 | Symptom | Ursache | Fix |
 |---------|---------|-----|
 | 403, Log `No matching DirectoryIndex` | Document Root ohne `index.html`, oder Proxy schon weg vor dem Pull | Branch `deploy` pullen |
+| 403, Log `.htaccess` / `pcfg_openfile` / Permission denied | Document Root `750` + Gruppe `psacln`, Apache nicht in der Gruppe | `chmod 755` auf das Document Root |
 | 500 nach „Node.js enable“ | Passenger sucht `app.js` | Node.js disable, statisch bleiben |
 | Domain 200, Inhalt alt | Plesk zieht noch `main` | Branch auf `deploy` |
 | Action grün, Plesk alt | Pull nicht ausgeführt | **Jetzt pullen** |
