@@ -1,8 +1,8 @@
 import type { NextConfig } from "next";
 
 /**
- * Deployment-neutral Next config for local `pnpm dev`.
- * No standalone/Docker output, no static export (yet — needs explicit approval).
+ * Self-hosted Next: `next build` + `next start` (Plesk Node, no Docker).
+ * No `output: "export"`, no standalone image.
  */
 const nextConfig: NextConfig = {
   images: {
