@@ -23,6 +23,14 @@ export const images = {
       sizes: "(max-width: 48rem) 140px, 210px",
       priority: true,
     } satisfies SiteImageAsset,
+    logoOrangeOnDark: {
+      src: "/images/brand/logo-orange-on-dark.png",
+      alt: "RE-MAN by PET-MAN",
+      width: 999,
+      height: 333,
+      sizes: "(max-width: 48rem) 140px, 210px",
+      priority: true,
+    } satisfies SiteImageAsset,
     logoPurple: {
       src: "/images/brand/logo-purple.png",
       alt: "RE-MAN by PET-MAN",

@@ -135,6 +135,38 @@ html[data-theme="orange"] {
   --color-accent-line: #fe8800;
 }
 
+html[data-theme="orange-dark"] {
+  color-scheme: dark;
+  --color-primary: #c44a00;
+  --color-primary-rgb: 196 74 0;
+  --color-secondary: #fe8800;
+  --color-secondary-rgb: 254 136 0;
+  --color-surface-dark: #1a100c;
+  --color-surface-dark-rgb: 26 16 12;
+  --color-surface-mint: #eee6df;
+  --color-bg: #1a100c;
+  --color-bg-rgb: 26 16 12;
+  --color-bg-soft: #241812;
+  --color-bg-soft-rgb: 36 24 18;
+  --color-bg-proof: #1f1611;
+  --color-text: #f7f5f2;
+  --color-text-rgb: 247 245 242;
+  --color-text-muted: #a89a90;
+  --color-text-soft: #cec2b9;
+  --color-text-meta: #8f8278;
+  --color-text-on-dark: #ccb8b0;
+  --color-text-on-dark-soft: #cec2b9;
+  --color-surface-muted: #241812;
+  --color-border: #3d2e26;
+  --color-border-strong: #4a3a30;
+  --color-footer-bg: #1a100c;
+  --color-footer-link: #cec2b9;
+  --color-footer-meta: #8f8278;
+  --color-accent-line: #fe8800;
+  --shadow-header: 0 0.25rem 1.25rem rgb(0 0 0 / 0.5);
+  --shadow-card: 0 0.25rem 0.75rem rgb(0 0 0 / 0.35);
+}
+
 html[data-theme="purple"] {
   --color-primary: #3f2bc4;
   --color-primary-rgb: 63 43 196;

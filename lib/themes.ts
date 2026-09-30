@@ -1,7 +1,7 @@
 import { images, type SiteImageAsset } from "./media";
 
 export const THEME_STORAGE_KEY = "reman-theme";
-export const THEME_IDS = ["green", "orange", "purple", "purple-dark"] as const;
+export const THEME_IDS = ["green", "orange", "orange-dark", "purple", "purple-dark"] as const;
 
 export type ThemeId = (typeof THEME_IDS)[number];
 
@@ -32,6 +32,13 @@ export const THEMES: Record<ThemeId, ThemeDefinition> = {
     label: "Oranges Farbschema",
     swatch: "linear-gradient(135deg, #c44a00 0%, #fe8800 100%)",
     logo: images.brand.logoOrange,
+    hero: images.home.heroOrange,
+  },
+  "orange-dark": {
+    id: "orange-dark",
+    label: "Dunkles oranges Farbschema",
+    swatch: "linear-gradient(135deg, #1a100c 0%, #fe8800 100%)",
+    logo: images.brand.logoOrangeOnDark,
     hero: images.home.heroOrange,
   },
   purple: {
