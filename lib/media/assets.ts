@@ -78,6 +78,14 @@ export const images = {
       sizes: "(max-width: 63.99rem) 100vw, 50vw",
       priority: true,
     } satisfies SiteImageAsset,
+    heroOrangeTech: {
+      src: "/images/home/hero-orange-tech.jpg",
+      alt: "",
+      width: 1024,
+      height: 682,
+      sizes: "(max-width: 63.99rem) 100vw, 50vw",
+      priority: true,
+    } satisfies SiteImageAsset,
     heroPurple: {
       src: "/images/home/hero-purple.jpg",
       alt: "",

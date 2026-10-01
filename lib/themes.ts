@@ -53,7 +53,7 @@ export const THEMES: Record<ThemeId, ThemeDefinition> = {
     label: "Dunkles oranges Farbschema, Anthrazit",
     swatch: "linear-gradient(135deg, #0f1417 0%, #fe8800 100%)",
     logo: images.brand.logoOrangeOnDark,
-    hero: images.home.heroOrange,
+    hero: images.home.heroOrangeTech,
   },
   purple: {
     id: "purple",
