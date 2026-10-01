@@ -167,6 +167,38 @@ html[data-theme="orange-dark"] {
   --shadow-card: 0 0.25rem 0.75rem rgb(0 0 0 / 0.35);
 }
 
+html[data-theme="orange-tech"] {
+  color-scheme: dark;
+  --color-primary: #c44a00;
+  --color-primary-rgb: 196 74 0;
+  --color-secondary: #fe8800;
+  --color-secondary-rgb: 254 136 0;
+  --color-surface-dark: #0f1417;
+  --color-surface-dark-rgb: 15 20 23;
+  --color-surface-mint: #ebebed;
+  --color-bg: #0f1417;
+  --color-bg-rgb: 15 20 23;
+  --color-bg-soft: #161c20;
+  --color-bg-soft-rgb: 22 28 32;
+  --color-bg-proof: #14191d;
+  --color-text: #ebebed;
+  --color-text-rgb: 235 235 237;
+  --color-text-muted: #9aa3a8;
+  --color-text-soft: #c5cbcf;
+  --color-text-meta: #8f989e;
+  --color-text-on-dark: #c5cbcf;
+  --color-text-on-dark-soft: #9aa3a8;
+  --color-surface-muted: #161c20;
+  --color-border: #2a3238;
+  --color-border-strong: #343c42;
+  --color-footer-bg: #0f1417;
+  --color-footer-link: #c5cbcf;
+  --color-footer-meta: #8f989e;
+  --color-accent-line: #fe8800;
+  --shadow-header: 0 0.25rem 1.25rem rgb(0 0 0 / 0.5);
+  --shadow-card: 0 0.25rem 0.75rem rgb(0 0 0 / 0.35);
+}
+
 html[data-theme="purple"] {
   --color-primary: #3f2bc4;
   --color-primary-rgb: 63 43 196;

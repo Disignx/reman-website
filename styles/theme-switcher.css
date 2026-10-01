@@ -40,6 +40,7 @@
 html[data-theme="green"] .theme-asset--green,
 html[data-theme="orange"] .theme-asset--orange,
 html[data-theme="orange-dark"] .theme-asset--orange-dark,
+html[data-theme="orange-tech"] .theme-asset--orange-tech,
 html[data-theme="purple"] .theme-asset--purple,
 html[data-theme="purple-dark"] .theme-asset--purple-dark {
   display: block;
