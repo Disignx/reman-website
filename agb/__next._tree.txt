@@ -1,0 +1,3 @@
+:HL["/_next/static/chunks/00k9z_svski_p.css","style"]
+:HC["/",""]
+0:{"tree":{"name":"","param":null,"prefetchHints":16,"slots":{"children":{"name":"agb","param":null,"prefetchHints":0,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}}}},"staleTime":300,"buildId":"-Mfs8wQVvgCbsK7P4UduB"}

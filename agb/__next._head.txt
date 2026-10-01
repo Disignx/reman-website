@@ -1,0 +1,5 @@
+1:"$Sreact.fragment"
+2:I[10791,["/_next/static/chunks/0kx2oxeb_6dqe.js","/_next/static/chunks/2q91nbcv99e4_.js","/_next/static/chunks/018g_rw-t-exb.js"],"ViewportBoundary"]
+3:I[10791,["/_next/static/chunks/0kx2oxeb_6dqe.js","/_next/static/chunks/2q91nbcv99e4_.js","/_next/static/chunks/018g_rw-t-exb.js"],"MetadataBoundary"]
+4:"$Sreact.suspense"
+0:{"rsc":["$","$1","h",{"children":[null,["$","$L2",null,{"children":[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]}],["$","div",null,{"hidden":true,"children":["$","$L3",null,{"children":["$","$4",null,{"name":"Next.Metadata","children":[["$","title","0",{"children":"AGB — RE-MAN"}],["$","meta","1",{"name":"description","content":"Allgemeine Geschäftsbedingungen der Marke RE-MAN — Inhalt folgt."}]]}]}]}],["$","meta",null,{"name":"next-size-adjust","content":""}]]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"-Mfs8wQVvgCbsK7P4UduB"}

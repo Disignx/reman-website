@@ -1,0 +1,6 @@
+1:"$Sreact.fragment"
+2:I[75221,["/_next/static/chunks/0kx2oxeb_6dqe.js","/_next/static/chunks/2q91nbcv99e4_.js","/_next/static/chunks/018g_rw-t-exb.js"],""]
+3:I[10791,["/_next/static/chunks/0kx2oxeb_6dqe.js","/_next/static/chunks/2q91nbcv99e4_.js","/_next/static/chunks/018g_rw-t-exb.js"],"OutletBoundary"]
+4:"$Sreact.suspense"
+0:{"rsc":["$","$1","c",{"children":[["$","section",null,{"className":"legal-stub","children":["$","div",null,{"className":"container","children":[["$","h1",null,{"children":"Impressum"}],["$","p",null,{"children":"Der rechtliche Impressumstext wird in einer späteren Phase ergänzt. RE-MAN ist eine Marke der PET-MAN GmbH."}],["$","p",null,{"style":{"marginTop":"1.5rem"},"children":["$","$L2",null,{"href":"/","children":"Zur Startseite"}]}]]}]}],null,["$","$L3",null,{"children":["$","$4",null,{"name":"Next.MetadataOutlet","children":"$@5"}]}]]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"-Mfs8wQVvgCbsK7P4UduB"}
+5:null
