@@ -1,21 +1,30 @@
 import { images, type SiteImageAsset } from "./media";
 
 export const THEME_STORAGE_KEY = "reman-theme";
-export const THEME_IDS = [
-  "green",
-  "orange",
-  "orange-dark",
-  "orange-tech",
-  "purple",
-  "purple-dark",
-] as const;
+export const THEME_IDS = ["green", "orange", "orange-dark", "purple", "purple-dark"] as const;
 
 export type ThemeId = (typeof THEME_IDS)[number];
 
 export const DEFAULT_THEME: ThemeId = "green";
 
+const THEME_ALIASES: Record<string, ThemeId> = {
+  "orange-tech": "orange-dark",
+};
+
 export function isThemeId(value: string | null | undefined): value is ThemeId {
   return THEME_IDS.includes(value as ThemeId);
+}
+
+export function resolveThemeId(value: string | null | undefined): ThemeId | null {
+  if (isThemeId(value)) {
+    return value;
+  }
+
+  if (value && value in THEME_ALIASES) {
+    return THEME_ALIASES[value];
+  }
+
+  return null;
 }
 
 export type ThemeDefinition = {
@@ -44,13 +53,6 @@ export const THEMES: Record<ThemeId, ThemeDefinition> = {
   "orange-dark": {
     id: "orange-dark",
     label: "Dunkles oranges Farbschema",
-    swatch: "linear-gradient(135deg, #1a100c 0%, #fe8800 100%)",
-    logo: images.brand.logoOrangeOnDark,
-    hero: images.home.heroOrange,
-  },
-  "orange-tech": {
-    id: "orange-tech",
-    label: "Dunkles oranges Farbschema, Anthrazit",
     swatch: "linear-gradient(135deg, #0f1417 0%, #fe8800 100%)",
     logo: images.brand.logoOrangeOnDark,
     hero: images.home.heroOrangeTech,

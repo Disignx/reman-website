@@ -1,7 +1,6 @@
 /**
  * Central navigation and CTA targets for RE-MAN.
- * Missing destination pages are mapped to existing homepage sections
- * until dedicated routes exist (documented in PROJECT_STATE).
+ * Button labels only from the CTA catalog (Konzept Abschnitt 7).
  */
 
 export type NavLink = {
@@ -9,92 +8,112 @@ export type NavLink = {
   label: string;
 };
 
+export const ROUTES = {
+  home: "/",
+  branchen: "/branchen/",
+  food: "/branchen/lebensmittel/",
+  kosmetik: "/branchen/kosmetik/",
+  weitere: "/branchen/#weitere",
+  materialien: "/materialien/",
+  mrpp: "/materialien/#mrpp",
+  mrhdpe: "/materialien/#mrhdpe",
+  lohn: "/lohnaufbereitung/",
+  technologie: "/technologie/",
+  ppwr: "/ppwr-food-contact/",
+  about: "/ueber-uns/",
+  petman: "/ueber-uns/#pet-man",
+  contact: "/kontakt/",
+  sample: "/kontakt/#muster",
+  visit: "/kontakt/#besichtigung",
+  application: "/branchen/lebensmittel/#anwendungsdaten",
+  datenschutz: "/datenschutz/",
+  impressum: "/impressum/",
+  agb: "/agb/",
+} as const;
+
+export const BRANCH_NAV: NavLink[] = [
+  { href: ROUTES.food, label: "Lebensmittel" },
+  { href: ROUTES.kosmetik, label: "Kosmetik" },
+];
+
 export const PRIMARY_NAV: NavLink[] = [
-  { href: "/#ziele", label: "Branchen" },
-  { href: "/#materialien", label: "Materialien" },
-  { href: "/#ziele", label: "Lohnaufbereitung" },
-  { href: "/#technologie", label: "Technologie" },
-  { href: "/#ppwr", label: "PPWR & Food Contact" },
-  { href: "/#herkunft", label: "Über RE-MAN" },
+  { href: ROUTES.branchen, label: "Branchen" },
+  { href: ROUTES.materialien, label: "Materialien" },
+  { href: ROUTES.lohn, label: "Lohnaufbereitung" },
+  { href: ROUTES.technologie, label: "Technologie" },
+  { href: ROUTES.ppwr, label: "PPWR & Food Contact" },
+  { href: ROUTES.about, label: "Über RE-MAN" },
 ];
 
 export const CTA = {
-  consultation: { href: "/#beratung", label: "Beratung anfragen" },
-  sample: { href: "/#beratung", label: "Muster anfragen" },
-  discussApplication: { href: "/#beratung", label: "Anwendung besprechen" },
-  viewMaterials: { href: "/#materialien", label: "Materialien ansehen" },
-  tolling: { href: "/#beratung", label: "Lohnaufbereitung anfragen" },
+  consultation: { href: ROUTES.contact, label: "Beratung anfragen" },
+  sample: { href: ROUTES.sample, label: "Muster anfragen" },
+  discussApplication: { href: ROUTES.contact, label: "Anwendung besprechen" },
+  viewMaterials: { href: ROUTES.materialien, label: "Materialien ansehen" },
+  tolling: { href: ROUTES.contact, label: "Lohnaufbereitung anfragen" },
+  viewTolling: { href: ROUTES.lohn, label: "Lohnaufbereitung anfragen" },
+  visit: { href: ROUTES.visit, label: "Produktionsbesichtigung anfragen" },
 } as const;
 
-export const FOOTER_COLUMNS: { title: string; links: NavLink[] }[] = [
+export type FooterColumn = {
+  title: string;
+  links: NavLink[];
+};
+
+export const FOOTER_COLUMNS: FooterColumn[] = [
   {
     title: "Branchen",
     links: [
-      { href: "/#ziele", label: "Food" },
-      { href: "/#ziele", label: "Kosmetik" },
-      { href: "/#ziele", label: "Pharma & Medical" },
-      { href: "/#ziele", label: "Technische Verpackungen" },
+      { href: ROUTES.food, label: "Lebensmittel" },
+      { href: ROUTES.kosmetik, label: "Kosmetik" },
+      { href: ROUTES.weitere, label: "Automotive / ELV" },
     ],
   },
   {
     title: "Materialien",
     links: [
-      { href: "/#materialien", label: "mrPP" },
-      { href: "/#materialien", label: "mrHDPE" },
+      { href: ROUTES.materialien, label: "Materialien" },
+      { href: ROUTES.mrpp, label: "mrPP" },
+      { href: ROUTES.mrhdpe, label: "mrHDPE" },
     ],
   },
   {
     title: "Lohnaufbereitung",
     links: [
-      { href: "/#ziele", label: "Ihr Material" },
-      { href: "/#nachweis", label: "Unser Prozess" },
-      { href: "/#technologie", label: "Ihre Vorteile" },
+      { href: ROUTES.lohn, label: "Lohnaufbereitung" },
+      { href: `${ROUTES.lohn}#input`, label: "Ihr Material" },
+      { href: `${ROUTES.lohn}#prozess`, label: "Verfahren" },
     ],
   },
   {
     title: "Technologie",
     links: [
-      { href: "/#technologie", label: "Dekontamination" },
-      { href: "/#technologie", label: "Extrusion" },
-      { href: "/#herkunft", label: "Qualität" },
+      { href: ROUTES.technologie, label: "Technologie" },
+      { href: `${ROUTES.technologie}#viscozero`, label: "viscoZERO" },
+      { href: `${ROUTES.technologie}#nachweise`, label: "Qualität & Nachweise" },
     ],
   },
   {
     title: "PPWR & Food Contact",
     links: [
-      { href: "/#ppwr", label: "Regulatorik" },
-      { href: "/#technologie", label: "Unser Ansatz" },
-      { href: "/#ppwr", label: "FAQ" },
+      { href: `${ROUTES.ppwr}#quoten`, label: "Rezyklatquote" },
+      { href: `${ROUTES.ppwr}#ntn`, label: "Novel Technology" },
+      { href: `${ROUTES.ppwr}#faq`, label: "FAQ" },
     ],
   },
   {
     title: "Über RE-MAN",
     links: [
-      { href: "/#herkunft", label: "Unsere Marke" },
-      { href: "/#beratung", label: "Die PET-MAN GmbH" },
-      { href: "/#beratung", label: "Karriere" },
+      { href: ROUTES.about, label: "Über RE-MAN" },
+      { href: ROUTES.contact, label: "Kontakt" },
     ],
   },
 ];
 
 export const LEGAL_LINKS: NavLink[] = [
-  { href: "/datenschutz/", label: "Datenschutz" },
-  { href: "/impressum/", label: "Impressum" },
-  { href: "/agb/", label: "AGB" },
+  { href: ROUTES.impressum, label: "Impressum" },
+  { href: ROUTES.datenschutz, label: "Datenschutz" },
+  { href: ROUTES.agb, label: "AGB" },
 ];
 
-/** Routes not yet built as dedicated pages (footer/legal stubs planned). */
-export const PENDING_DESTINATIONS = [
-  "/branchen/*",
-  "/materialien/mrpp",
-  "/materialien/mrhdpe",
-  "/lohnaufbereitung/*",
-  "/technologie/*",
-  "/ppwr/*",
-  "/ueber-uns/*",
-  "/karriere",
-  "/datenschutz",
-  "/impressum",
-  "/agb",
-  "/en",
-] as const;
+export const PENDING_DESTINATIONS = ["/karriere", "/en"] as const;

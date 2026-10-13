@@ -1,3 +1,4 @@
+import { MobileCtaBar } from "./mobile-cta-bar";
 import { SiteFooter } from "./site-footer";
 import { SiteHeader } from "./site-header";
 import { ThemeSwitcher } from "./theme-switcher";
@@ -21,6 +22,7 @@ export function SiteShell({ children }: SiteShellProps) {
       </main>
 
       <SiteFooter />
+      <MobileCtaBar />
       <ThemeSwitcher />
     </>
   );

@@ -4,7 +4,7 @@ import Link from "next/link";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { Icon } from "./site-icon";
 import { ThemeImage } from "./theme-image";
-import { CTA, PRIMARY_NAV } from "@/lib/navigation";
+import { BRANCH_NAV, CTA, PRIMARY_NAV, ROUTES } from "@/lib/navigation";
 
 export function SiteHeader() {
   const headerRef = useRef<HTMLElement>(null);
@@ -55,11 +55,24 @@ export function SiteHeader() {
 
           <nav className="site-header__nav" aria-label="Hauptnavigation">
             <ul className="site-header__nav-list">
-              {PRIMARY_NAV.map((link) => (
-                <li key={link.label}>
-                  <Link href={link.href}>{link.label}</Link>
-                </li>
-              ))}
+              {PRIMARY_NAV.map((link) =>
+                link.href === ROUTES.branchen ? (
+                  <li className="site-header__dropdown" key={link.label}>
+                    <Link href={link.href}>{link.label}</Link>
+                    <ul className="site-header__submenu">
+                      {BRANCH_NAV.map((item) => (
+                        <li key={item.href}>
+                          <Link href={item.href}>{item.label}</Link>
+                        </li>
+                      ))}
+                    </ul>
+                  </li>
+                ) : (
+                  <li key={link.label}>
+                    <Link href={link.href}>{link.label}</Link>
+                  </li>
+                ),
+              )}
             </ul>
           </nav>
 
@@ -105,6 +118,17 @@ export function SiteHeader() {
               <Link href={link.href} onClick={closeMenu}>
                 {link.label}
               </Link>
+              {link.href === ROUTES.branchen ? (
+                <ul className="site-header__mobile-sub">
+                  {BRANCH_NAV.map((item) => (
+                    <li key={item.href}>
+                      <Link href={item.href} onClick={closeMenu}>
+                        {item.label}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              ) : null}
             </li>
           ))}
         </ul>

@@ -4,11 +4,12 @@ import type { SiteImageAsset } from "@/lib/media";
 
 type GoalCardProps = {
   title: string;
+  description?: string;
   cta: { href: string; label: string };
   image: SiteImageAsset;
 };
 
-export function GoalCard({ title, cta, image }: GoalCardProps) {
+export function GoalCard({ title, description, cta, image }: GoalCardProps) {
   return (
     <article className="goal-card sr-fade-up">
       <div className="goal-card__media">
@@ -16,6 +17,7 @@ export function GoalCard({ title, cta, image }: GoalCardProps) {
         <h4>{title}</h4>
       </div>
       <div className="goal-card__cta">
+        {description ? <p className="goal-card__text">{description}</p> : null}
         <a className="btn btn--primary btn--lg btn--block" href={cta.href}>
           <span>{cta.label}</span>
           <Icon name="arrow-right" className="icon icon--inverse" weight="bold" />

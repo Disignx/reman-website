@@ -604,8 +604,17 @@
 }
 
 .goal-card__cta {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
   padding: var(--space-lg);
   margin-top: auto;
+}
+
+.goal-card__text {
+  margin: 0;
+  color: var(--color-text-muted);
+  font-size: var(--fs-body-sm);
 }
 
 .goal-card__cta .btn {
@@ -626,6 +635,7 @@
 }
 
 .materials h2,
+.materials h3,
 .materials .section-lead__kicker {
   color: var(--color-text-inverse);
 }

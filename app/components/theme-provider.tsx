@@ -1,7 +1,7 @@
 "use client";
 
 import { createContext, useCallback, useContext, useEffect, useMemo, useState } from "react";
-import { DEFAULT_THEME, isThemeId, THEME_STORAGE_KEY, type ThemeId } from "@/lib/themes";
+import { DEFAULT_THEME, resolveThemeId, THEME_STORAGE_KEY, type ThemeId } from "@/lib/themes";
 
 type ThemeContextValue = {
   theme: ThemeId;
@@ -28,8 +28,8 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
   }, []);
 
   useEffect(() => {
-    const attr = document.documentElement.getAttribute("data-theme");
-    if (isThemeId(attr)) {
+    const attr = resolveThemeId(document.documentElement.getAttribute("data-theme"));
+    if (attr) {
       setThemeState(attr);
     }
   }, []);

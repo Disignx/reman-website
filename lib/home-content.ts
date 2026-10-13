@@ -1,4 +1,4 @@
-import { CTA } from "./navigation";
+import { CTA, ROUTES } from "./navigation";
 import { images } from "./media";
 
 /** Icon keys must exist in `app/components/site-icon.tsx`. */
@@ -114,7 +114,7 @@ export const GOALS = {
     },
     {
       title: "Eigenes Material\naufbereiten",
-      cta: CTA.tolling,
+      cta: CTA.viewTolling,
       image: images.home.goalTolling,
     },
     {
@@ -133,13 +133,13 @@ export const MATERIALS = {
     {
       name: "mrPP",
       description: "Post-Consumer · transparent",
-      href: "/#materialien",
+      href: ROUTES.mrpp,
       image: images.home.mrppDetail,
     },
     {
       name: "mrHDPE",
       description: "Post-Consumer · transparent",
-      href: "/#materialien",
+      href: ROUTES.mrhdpe,
       image: images.home.mrhdpeDetail,
     },
   ],

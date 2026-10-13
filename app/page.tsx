@@ -3,6 +3,8 @@ import { FactItem } from "./components/fact-item";
 import { GoalCard } from "./components/goal-card";
 import { Icon } from "./components/site-icon";
 import { MaterialCard } from "./components/material-card";
+import { PagePrefooter } from "./components/page-prefooter";
+import { SectionLead } from "./components/section-lead";
 import { SiteImage } from "./components/site-image";
 import { ThemeImage } from "./components/theme-image";
 import { TraceabilityStep } from "./components/traceability-step";
@@ -12,33 +14,9 @@ import {
   MATERIALS,
   ORIGIN,
   PPWR_FACTS,
-  PREFOOTER,
   TECHNOLOGY,
   TRACEABILITY,
 } from "@/lib/home-content";
-import { images } from "@/lib/media";
-
-function SectionLead({
-  title,
-  leitgedanke,
-  inverse = false,
-  titleClassName,
-}: {
-  title: string;
-  leitgedanke: string;
-  inverse?: boolean;
-  titleClassName?: string;
-}) {
-  return (
-    <div className="section-lead sr-fade-up">
-      <h2 className={titleClassName}>{title}</h2>
-      <div className={`section-lead__kicker${inverse ? " section-lead__kicker--inverse" : ""}`}>
-        <span className="section-lead__accent" aria-hidden="true" />
-        <p>{leitgedanke}</p>
-      </div>
-    </div>
-  );
-}
 
 export default function HomePage() {
   return (
@@ -221,31 +199,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="section prefooter" id={PREFOOTER.id} aria-labelledby="prefooter-title">
-        <div className="prefooter__media" aria-hidden="true">
-          <SiteImage asset={PREFOOTER.image} fill className="prefooter__media-image" />
-        </div>
-        <div className="container prefooter__inner">
-          <div className="prefooter__copy sr-fade-up">
-            <h2 id="prefooter-title">{PREFOOTER.title}</h2>
-            <p>{PREFOOTER.description}</p>
-            <div className="prefooter__actions" style={{ marginTop: "var(--space-xl)" }}>
-              <a className="btn btn--primary btn--xl" href={PREFOOTER.primaryCta.href}>
-                <span>{PREFOOTER.primaryCta.label}</span>
-                <Icon name="arrow-right" className="icon icon--inverse" />
-              </a>
-              <a className="btn btn--ghost btn--xl" href={PREFOOTER.secondaryCta.href}>
-                <span>{PREFOOTER.secondaryCta.label}</span>
-                <Icon name="arrow-right" className="icon icon--inverse" />
-              </a>
-            </div>
-          </div>
-          <div className="prefooter__partner sr-fade-up">
-            <p className="prefooter__partner-note">{PREFOOTER.petmanNote}</p>
-            <SiteImage asset={images.brand.petmanLogo} className="prefooter__partner-logo" />
-          </div>
-        </div>
-      </section>
+      <PagePrefooter />
     </>
   );
 }

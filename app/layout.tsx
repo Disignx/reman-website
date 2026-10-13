@@ -28,7 +28,7 @@ export default function RootLayout({
         />
         <script
           dangerouslySetInnerHTML={{
-            __html: `try{var t=localStorage.getItem(${JSON.stringify(THEME_STORAGE_KEY)});if(${JSON.stringify(THEME_IDS)}.indexOf(t)!==-1)document.documentElement.setAttribute("data-theme",t)}catch(e){}`,
+            __html: `try{var t=localStorage.getItem(${JSON.stringify(THEME_STORAGE_KEY)});if(t==="orange-tech")t="orange-dark";if(${JSON.stringify(THEME_IDS)}.indexOf(t)!==-1)document.documentElement.setAttribute("data-theme",t)}catch(e){}`,
           }}
         />
       </head>
